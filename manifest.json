@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Animanch URL Copier",
+  "version": "1.0",
+  "description": "あにまん掲示板の特定のレスへのURLをコピーする拡張機能",
+  "permissions": [
+    "contextMenus",
+    "clipboardWrite",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://bbs.animanch.com/board/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://bbs.animanch.com/board/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
